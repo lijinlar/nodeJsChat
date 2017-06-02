@@ -1,0 +1,99 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/socket.io.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/scrollto.js"></script>
+	<script type="text/javascript" src="js/localscroll.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/myScript.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a id="logout" href="#">Logout</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">LINTU's chat - NodeJS</h3>
+      </div>
+
+      <div id="main-scoll" class="main-container">
+        <div class="content">
+          <div class="jumbotron text-center">
+            <h1>Here we go..!</h1>
+            <p class="lead">Simple chatroom based chat application.. Join us to have fun ;)</p>
+            <p><a class="btn btn-lg btn-success" href="#join" role="button">Start</a></p>
+          </div>
+        </div>
+        <div id="join" class="content">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Join in one step</h3>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <div class="input-group col-md-12 input-group-lg">
+                    <div class="input-group-addon bg-primary">Name</div>
+                    <input id="userName" type="text" class="form-control">
+                  </div>
+                  <br>
+                  <div class="input-group col-md-12 text-center">
+                  <div class="btn btn-default" id="btn-join">Join now</div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer text-muted">We won't spam you..!</div>
+            </div>
+        </div>
+
+        <div id="chatRooms" class="content">
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Available chat rooms...</h3>
+              </div>
+              <div id="chatroomlist" class="panel-body">
+              </div>
+              <div class="panel-footer">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">Create a room</div>
+                    <input class="form-control" type="text" id="newRoomname"></input>
+                    <div id="createRoom" class="btn btn-default input-group-addon">Create</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div id="chatRoom" class="content">
+          <a href="#chatRooms" id="unjoinroom" class="pull-right" style="height:38px;color:white;padding:5px;"><i class="glyphicon glyphicon-chevron-left"></i>Chat rooms</a>
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 id="roomname" class="panel-title"></h3>
+              </div>
+              <div class="panel-body">
+                <div id="chatwindow">
+                </div>
+              </div>
+              <div class="panel-footer">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">Chat</div>
+                    <input class="form-control" type="text" id="newmsg"></input>
+                    <div id="sendmsg" class="btn btn-default input-group-addon">Send</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+      </div>
+      
+
+</body>
+</html>

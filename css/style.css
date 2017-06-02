@@ -1,0 +1,12 @@
+.main-container > .content{
+	display: inline-block !important;
+	width: 100%;
+}
+.main-container{
+	overflow: hidden;
+	white-space:  nowrap; 
+}
+
+.chat-name{
+	font-weight: bold;
+}
