@@ -20,7 +20,7 @@ var app = http.createServer(function (request, response) {
 		});
         
     
-}).listen(80); // setting the port to which this application have to listen
+}).listen(1755); // setting the port to which this application have to listen
 
 var io = require('socket.io').listen(app); // creating a socket server
     // io.sockets.on('disconnect', function(arg) {
