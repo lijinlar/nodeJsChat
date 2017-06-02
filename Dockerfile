@@ -9,7 +9,7 @@ WORKDIR /app
 #RUN apt-get install git
 #RUN git clone  https://github.com/lijinlar/nodeJsChat.git app
 ADD . /app
-RUN npm install package.json
+RUN npm install
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
