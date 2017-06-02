@@ -1,14 +1,26 @@
 
 var http = require('http');
 var uuid = require('node-uuid');
+fs = require('fs')
 var users = {};
 var rooms=[];
 var app = http.createServer(function (request, response) {
-        response.writeHead(200, {'Content-Type': 'text/plain'}); // responding to the connection request with status code 200 (success)
-        response.write("connected "); // giving a response to conected client
-        response.end();
+		console.log(request.url);
+		var file = request.url.indexOf(".")!=-1?'.'+request.url:'index.html';
+		var type=request.url.indexOf("js")!=-1?'text/script':request.url.indexOf("css")!=-1?'text/css':'text/html';
+		fs.readFile(file, 'utf8', function (err,data) {
+		  if (err) {
+			response.writeHead(404, {'Content-Type': 'text/html'});
+		  }else{
+		  
+			response.writeHead(200, {'Content-Type': type}); // responding to the connection request with status code 200 (success)
+			response.write(data); // giving a response to conected client
+			response.end();
+		}
+		});
+        
     
-}).listen(1555); // setting the port to which this application have to listen
+}).listen(80); // setting the port to which this application have to listen
 
 var io = require('socket.io').listen(app); // creating a socket server
     // io.sockets.on('disconnect', function(arg) {
