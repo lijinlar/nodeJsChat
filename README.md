@@ -2,8 +2,10 @@
 Simple nodeJS chat room
 
 
-npm install
+``` npm install ```
 
 then,
 
-node server.js
+``` node server.js ```
+
+Done..!
